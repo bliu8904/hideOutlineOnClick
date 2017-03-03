@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <style>
+            :focus {
+                outline: 1px solid blue;
+            }
+
+            body.mouse-down :focus {
+                outline: 0;
+            }
+
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                var $body = $('body');
+
+                $body.on('mousedown', function(){
+                    $body.addClass('mouse-down');
+                });
+
+                $body.on('keydown', function(){
+                    $body.removeClass('mouse-down');
+                });
+            });
+        </script>
+
+    </head>
+
+    <body>
+        <h1>Hide Outline on Click Demo</h1>
+        <p>Outline will show on keydown and will hide on click</p>
+        <div>
+            <input />
+            <input />
+        </div>
+        <fieldset>
+            <legend>Radio Group</legend>
+            <label for="radio1">Radio Option 1</label>           
+            <input id="radio1" type="radio" name="radioGroup" />
+            <label for="radio2">Radio Option 2</label>
+            <input id="radio2" type="radio" name="radioGroup" />
+            <label for="radio3">Radio Option 3</label>
+            <input id="radio3" type="radio" name="radioGroup" />
+        </fieldset>
+        
+        <div>
+            <a href="#">Link1</a>
+            <a href="#">Link2</a>
+        </div>
+        <div>
+            <button>Button1</button>
+            <button>Button2</button>
+        </div>
+    </body>
+
+</html>
